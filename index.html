@@ -231,6 +231,73 @@
           <li>Depois de instalar, o LED azul fica aceso fixo: configure o Wi-Fi de novo pela rede MINHA_PLANTA.</li>
         </ol>
         <p class="alerta"><span aria-hidden="true">⚠️</span> A instalação apaga o Wi-Fi salvo, as plantas criadas e a calibração.</p>
+        <div class="telas">
+          <h4><span aria-hidden="true">🖱️</span> Tela por tela: onde clicar</h4>
+          <p>As janelas do instalador aparecem em inglês. Veja o que cada uma mostra e onde clicar. O destaque em laranja mostra o que fazer.</p>
+          <ol class="telas-lista">
+            <li class="tela">
+              <div class="mock mock-site" aria-hidden="true"><span class="mock-verde clique">Instalar código original</span></div>
+              <p><b>1.</b> Com o ESP32 ligado no computador, clique em <b>Instalar código original</b>.</p>
+            </li>
+            <li class="tela">
+              <div class="mock" aria-hidden="true">
+                <p class="mock-tit">minhaplanta.vercel.app quer se conectar a uma porta serial</p>
+                <div class="mock-lista"><span class="clique">USB JTAG/serial debug unit (COM3)</span></div>
+                <div class="mock-botoes chrome"><span>Cancelar</span><span class="azul clique">Conectar</span></div>
+              </div>
+              <p><b>2.</b> Clique em <b>USB JTAG/serial debug unit</b> e depois em <b>Conectar</b> (em alguns computadores aparece <b>Ligar</b>). O número COM pode ser outro. Lista vazia? Desligue o cabo, segure o botão <b>BOOT</b>, ligue o cabo de novo e solte.</p>
+            </li>
+            <li class="tela">
+              <div class="mock" aria-hidden="true">
+                <p class="mock-tit">Minha Planta <span class="mock-x">×</span></p>
+                <div class="mock-item clique">⬇ Install Minha Planta</div>
+                <div class="mock-item">▣ Logs &amp; Console</div>
+              </div>
+              <p><b>3.</b> Na janela <b>Minha Planta</b>, clique em <b>Install Minha Planta</b> (instalar).</p>
+            </li>
+            <li class="tela">
+              <div class="mock" aria-hidden="true">
+                <p class="mock-tit">Erase device</p>
+                <p class="mock-txt">Do you want to erase the device before installing Minha Planta?</p>
+                <div class="mock-check clique">☑ Erase device</div>
+                <div class="mock-botoes"><span class="azul">Back</span><span class="azul clique">Next</span></div>
+              </div>
+              <p><b>4.</b> Marque a caixa <b>Erase device</b> (apagar o aparelho) e clique em <b>Next</b> (próximo).</p>
+            </li>
+            <li class="tela">
+              <div class="mock" aria-hidden="true">
+                <p class="mock-tit">Confirm Installation</p>
+                <p class="mock-txt">Do you want to install Minha Planta v1? All data on the device will be erased.</p>
+                <div class="mock-botoes"><span class="azul">Back</span><span class="azul clique">Install</span></div>
+              </div>
+              <p><b>5.</b> Confirme clicando em <b>Install</b> (instalar).</p>
+            </li>
+            <li class="tela">
+              <div class="mock" aria-hidden="true">
+                <p class="mock-tit">Installing</p>
+                <div class="mock-barra"><i></i></div>
+                <p class="mock-txt">This will take 2 minutes. Keep this page visible to prevent slow down</p>
+              </div>
+              <p><b>6.</b> Espere cerca de <b>2 minutos</b>. <b>Não feche a página, não troque de aba e não tire o cabo.</b></p>
+            </li>
+            <li class="tela">
+              <div class="mock" aria-hidden="true">
+                <p class="mock-tit mock-ok">✔ Installation complete!</p>
+                <div class="mock-botoes"><span class="azul clique">Next</span></div>
+              </div>
+              <p><b>7.</b> Apareceu <b>Installation complete!</b> (instalação concluída). Clique em <b>Next</b>.</p>
+            </li>
+            <li class="tela">
+              <div class="mock" aria-hidden="true">
+                <p class="mock-tit">Minha Planta <span class="mock-x clique">×</span></p>
+                <div class="mock-item">⬇ Install Minha Planta</div>
+                <div class="mock-item">▣ Logs &amp; Console</div>
+              </div>
+              <p><b>8.</b> Feche a janela no <b>×</b>. Pronto! O LED azul fica <b>aceso fixo</b>: configure o Wi-Fi pela rede <b>MINHA_PLANTA</b>. Se o LED não acender, tire o cabo e ligue de novo.</p>
+            </li>
+          </ol>
+          <p class="mock-erro"><b>Apareceu "Installation failed"?</b> Clique em <b>Back</b>, desligue e ligue o cabo e tente de novo. Se continuar, use a Arduino IDE, explicada logo abaixo.</p>
+        </div>
         <div class="plano-b">
           <h4><span aria-hidden="true">🛠️</span> Não funcionou pelo navegador? Use a Arduino IDE</h4>
           <p>Calma, isso é comum. O botão acima <b>não funciona</b> quando:</p>

@@ -1,0 +1,8 @@
+{
+  "name": "Minha Planta",
+  "version": "v1",
+  "new_install_prompt_erase": true,
+  "builds": [
+    { "chipFamily": "ESP32-C3", "parts": [ { "path": "minha_planta_v1.merged.bin", "offset": 0 } ] }
+  ]
+}

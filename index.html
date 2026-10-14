@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Minha Planta · Guia do kit</title>
+<meta name="description" content="Guia do kit do projeto Minha Planta: o que é o projeto, montagem da placa e configuração do Wi-Fi, das plantas e dos sensores, e código para baixar ou instalar.">
+<meta name="theme-color" content="#eef2ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121a14" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="img/n01_conectores.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="marca"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V15" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M16 16C16 9 11 5 4 5c0 7 5 11 12 11Z" fill="currentColor"/><path d="M16 13c0-5 4-9 12-9 0 6-4 10-12 9Z" fill="currentColor" opacity=".7"/></svg><div><strong>Minha Planta</strong><span>Guia do kit</span></div></div>
+</header>
+<nav class="abas" role="tablist" aria-label="Partes do guia">
+  <button role="tab" id="aba-sobre" aria-controls="sobre" aria-selected="true" data-aba="sobre">Sobre</button>
+  <button role="tab" id="aba-montagem" aria-controls="montagem" aria-selected="false" data-aba="montagem" tabindex="-1">Montagem</button>
+  <button role="tab" id="aba-configuracao" aria-controls="configuracao" aria-selected="false" data-aba="configuracao" tabindex="-1">Configuração</button>
+  <button role="tab" id="aba-codigo" aria-controls="codigo" aria-selected="false" data-aba="codigo" tabindex="-1">Código</button>
+</nav>
+<main>
+  <section id="sobre" role="tabpanel" aria-labelledby="aba-sobre" class="sobre">
+    <div class="hero">
+      <div>
+        <h2><span>Projeto Minha Planta:</span> monte, programe e dê vida à sua criatividade! <i aria-hidden="true">🌱⚡</i></h2>
+        <p class="pergunta">Já imaginou transformar um vaso de planta em um projeto de tecnologia feito por você?</p>
+        <a class="proximo" href="#montagem">Começar a montagem →</a>
+      </div>
+      <div class="hero-texto">
+        <p>Com o <b>projeto Minha Planta</b>, você monta seu próprio dispositivo inteligente, capaz de monitorar a <b>umidade da terra</b>, a <b>temperatura</b>, a <b>umidade do ar</b> e a <b>luminosidade</b>. E o melhor: você acompanha todas essas informações diretamente pelo navegador do seu celular!</p>
+        <p>Mas a verdadeira diversão vai muito além de cuidar de plantas. <b>Este é um projeto maker para quem gosta de colocar a mão na massa, explorar a eletrônica e descobrir tudo o que é possível fazer com tecnologia.</b></p>
+      </div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <h3><span class="ico" aria-hidden="true">🔧</span>Muito mais do que um kit: um mundo de possibilidades!</h3>
+        <p>Aqui, você não recebe um produto fechado para simplesmente ligar e usar. Você participa da construção: <b>solda os componentes, conecta os sensores, monta o case</b> e configura tudo para funcionar na sua rede Wi-Fi.</p>
+        <p>E depois que estiver funcionando? Aí começa a parte mais interessante!</p>
+        <p><b>Modifique, experimente, programe e crie!</b> Explore o código, adicione novas funcionalidades e transforme o projeto em algo que tenha a sua cara. Use o projeto Minha Planta como ponto de partida para aprender, testar ideias e desenvolver suas próprias soluções.</p>
+        <p>Cada componente é uma oportunidade de descobrir algo novo. Cada modificação é uma chance de ir mais longe.</p>
+      </article>
+      <article class="card">
+        <h3><span class="ico" aria-hidden="true">🚀</span>O que você vai aprender na prática?</h3>
+        <ul class="lista">
+          <li><span aria-hidden="true">🔥</span><p><b>Eletrônica e soldagem:</b> monte sua placa e veja os componentes ganharem vida.</p></li>
+          <li><span aria-hidden="true">📡</span><p><b>Sensores e automação:</b> descubra como transformar informações do ambiente em dados.</p></li>
+          <li><span aria-hidden="true">📶</span><p><b>ESP32 e IoT:</b> explore o potencial de um microcontrolador conectado ao Wi-Fi.</p></li>
+          <li><span aria-hidden="true">💻</span><p><b>Programação:</b> modifique o código e experimente novas funcionalidades.</p></li>
+          <li><span aria-hidden="true">📱</span><p><b>Desenvolvimento web:</b> visualize os dados em uma página acessada pelo navegador do celular.</p></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3><span class="ico" aria-hidden="true">💡</span>Feito para explorar. Pronto para evoluir.</h3>
+        <p>O projeto Minha Planta é ideal para quem quer sair da teoria e aprender fazendo, seja dando os primeiros passos no universo maker ou experimentando novas ideias com ESP32, eletrônica e IoT.</p>
+        <p class="lema">Monte o seu. Entenda como funciona. Modifique. Invente algo novo.</p>
+        <p>Afinal, o melhor de um projeto maker não é apenas ver tudo funcionando. <b>É descobrir até onde você consegue chegar com ele!</b></p>
+      </article>
+    </div>
+    <aside class="antes">
+      <h3><span aria-hidden="true">📌</span> Antes de comprar</h3>
+      <ul>
+        <li><b>Wi-Fi:</b> o ESP32-C3 funciona em redes de 2,4 GHz. Redes de 5 GHz não são compatíveis.</li>
+        <li><b>Cabo USB-C:</b> não acompanha o kit. Você precisará de um cabo USB-C compatível para alimentar e, quando necessário, programar o dispositivo.</li>
+        <li><b>Vaso de planta:</b> não está incluso no kit.</li>
+      </ul>
+    </aside>
+  </section>
+  <section id="montagem" role="tabpanel" aria-labelledby="aba-montagem" aria-roledescription="carrossel" hidden>
+    <p class="intro">Solde os conectores, encaixe os módulos e feche a caixa.</p>
+    <div class="slides" tabindex="0" aria-label="Passos, deslize para o lado">
+      <article class="passo m" id="m-1">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Soldar os conectores"><img src="img/n01_conectores.webp" width="1400" height="1050" alt="Soldar os conectores" loading="eager" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Montagem</span><span class="num">Passo 1</span><h3>Soldar os conectores</h3><p>Coloque os conectores por cima da placa: <b>2 soquetes fêmea 1x8</b> (ESP32-C3), <b>soquete fêmea 1x5</b> (LUZ), <b>soquete fêmea 1x4</b> (TEMP) e <b>pino macho 90° 1x3</b> (SOLO, pontas para cima). O nome de cada pino está escrito na placa.</p></div>
+      </article>
+      <article class="passo m" id="m-2">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Solda por baixo"><img src="img/n02_solda_por_baixo.webp" width="1400" height="1050" alt="Solda por baixo" loading="eager" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Montagem</span><span class="num">Passo 2</span><h3>Solda por baixo</h3><p>Vire a placa e solde cada pino por baixo: <b>28 pontos</b>. Solde primeiro um pino de cada conector, confira se ficou reto e depois solde o resto. A solda não pode encostar no pino vizinho.</p></div>
+      </article>
+      <article class="passo m" id="m-3">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Módulos e cabo do solo"><img src="img/n03_modulos_e_cabo.webp" width="1400" height="1057" alt="Módulos e cabo do solo" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Montagem</span><span class="num">Passo 3</span><h3>Módulos e cabo do solo</h3><p>Coloque a placa na caixa, apoiada nos 4 pinos. Encaixe o <b>ESP32-C3</b> com o USB-C na abertura da frente, o sensor de luz <b>GY-302</b> (VCC no VCC) e o de temperatura <b>AHT20</b> (VIN no VIN). Passe o cabo do sensor de solo pelo <b>furo da lateral</b> e encaixe no pino 90°: GND, VCC e AOUT iguais aos da placa.</p></div>
+      </article>
+      <article class="passo m" id="m-4">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Fechar a tampa"><img src="img/n04_tampa.webp" width="1400" height="1057" alt="Fechar a tampa" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Montagem</span><span class="num">Passo 4</span><h3>Fechar a tampa</h3><p>Encaixe a tampa e aperte as bordas até <b>estalar</b>. <b>Janela 8x8</b>: luz para o sensor. <b>5 rasgos</b>: ar para o sensor de temperatura. <b>Furo 5x5</b>: mostra o LED azul. Para abrir, use o <b>entalhe da lateral</b>.</p><a class="proximo" href="#configuracao">Montou? Agora configure →</a></div>
+      </article>
+    </div>
+    <div class="controles">
+      <button type="button" class="ant" aria-label="Anterior">‹</button>
+      <div class="meio"><span class="cont"><b>1</b> / 4</span><div class="barra"><i></i></div></div>
+      <button type="button" class="prox" aria-label="Próximo">›</button>
+    </div>
+  </section>
+  <section id="configuracao" role="tabpanel" aria-labelledby="aba-configuracao" aria-roledescription="carrossel" hidden>
+    <p class="intro">Ligue o kit, conecte no Wi-Fi da casa, escolha a planta e calibre os sensores.</p>
+    <div class="slides" tabindex="0" aria-label="Passos, deslize para o lado">
+      <article class="passo c" id="c-1">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Ligar o kit"><img src="img/00a_usb_ligado.webp" width="780" height="600" alt="Ligar o kit" loading="eager" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Conectar no Wi-Fi</span><span class="num">Tela 1</span><h3>Ligar o kit</h3><p>Ligue o cabo USB-C no ESP32 e num carregador de celular. Na primeira vez, o LED azul fica <b>aceso fixo</b>: o projeto Minha Planta está pronto para configurar o Wi-Fi.</p></div>
+      </article>
+      <article class="passo c" id="c-2">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Entrar na rede MINHA_PLANTA"><img src="img/00b_rede_minha_planta.webp" width="780" height="720" alt="Entrar na rede MINHA_PLANTA" loading="eager" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Conectar no Wi-Fi</span><span class="num">Tela 2</span><h3>Entrar na rede MINHA_PLANTA</h3><p>No celular, abra as configurações de Wi-Fi e conecte na rede <b>MINHA_PLANTA</b> (não tem senha). A tela de configuração abre sozinha. Se não abrir, digite <b>192.168.4.1</b> no navegador.</p></div>
+      </article>
+      <article class="passo c" id="c-3">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Escolher a rede da casa"><img src="img/01_wifi_lista_c.webp" width="780" height="762" alt="Escolher a rede da casa" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Conectar no Wi-Fi</span><span class="num">Tela 3</span><h3>Escolher a rede da casa</h3><p>Aparecem as redes que o projeto Minha Planta encontrou. As barrinhas mostram o sinal: quanto mais barras, melhor. Toque na rede da sua casa. Só aparecem redes de <b>2,4 GHz</b>.</p></div>
+      </article>
+      <article class="passo c" id="c-4">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Digitar a senha"><img src="img/02_wifi_senha_c.webp" width="780" height="1150" alt="Digitar a senha" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Conectar no Wi-Fi</span><span class="num">Tela 4</span><h3>Digitar a senha</h3><p>Digite a senha do Wi-Fi da casa e toque em <b>Conectar</b>. Marque "mostrar senha" para conferir se digitou certo.</p></div>
+      </article>
+      <article class="passo c" id="c-5">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Conectando"><img src="img/03_wifi_conectando_c.webp" width="780" height="397" alt="Conectando" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Conectar no Wi-Fi</span><span class="num">Tela 5</span><h3>Conectando</h3><p>O projeto Minha Planta está entrando na rede da casa. Leva até 1 minuto. Se a senha estiver errada, a tela volta para a lista com um aviso.</p></div>
+      </article>
+      <article class="passo c" id="c-6">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Conectado"><img src="img/04_wifi_ok_c.webp" width="780" height="502" alt="Conectado" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Conectar no Wi-Fi</span><span class="num">Tela 6</span><h3>Conectado</h3><p>Pronto! O celular volta para o Wi-Fi da casa e o site abre sozinho. Se não abrir, toque em <b>minhaplanta.local</b> ou no <b>endereço IP</b> mostrado (ex.: 192.168.0.50). Salve o endereço nos favoritos.</p></div>
+      </article>
+      <article class="passo c" id="c-7">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Primeira tela do site"><img src="img/05_site_inicio_c.webp" width="780" height="406" alt="Primeira tela do site" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Escolher ou criar a planta</span><span class="num">Tela 7</span><h3>Primeira tela do site</h3><p>No primeiro acesso ainda não tem planta escolhida. Toque em <b>Escolha a planta</b>.</p></div>
+      </article>
+      <article class="passo c" id="c-8">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Lista de plantas"><img src="img/06_planta_menu.webp" width="780" height="1688" alt="Lista de plantas" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Escolher ou criar a planta</span><span class="num">Tela 8</span><h3>Lista de plantas</h3><p>A <b>Kalanchoe</b> já vem pronta. Para outra planta, toque em <b>+ Criar planta</b>. Dá para criar até 10 plantas.</p></div>
+      </article>
+      <article class="passo c" id="c-9">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Criar planta"><img src="img/07a_criar_vazio.webp" width="780" height="1688" alt="Criar planta" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Escolher ou criar a planta</span><span class="num">Tela 9</span><h3>Criar planta</h3><p>O formulário já vem com valores iniciais. Digite o nome e troque as faixas pelas da sua planta.</p></div>
+      </article>
+      <article class="passo c" id="c-10">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Luz por dia"><img src="img/07b_criar_luz_opcoes.webp" width="780" height="1688" alt="Luz por dia" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Escolher ou criar a planta</span><span class="num">Tela 10</span><h3>Luz por dia</h3><p>Escolha quanta luz a planta precisa. Embaixo de cada opção há exemplos de plantas.</p></div>
+      </article>
+      <article class="passo c" id="c-11">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Umidade do ar"><img src="img/07c_criar_ar_opcoes.webp" width="780" height="1688" alt="Umidade do ar" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Escolher ou criar a planta</span><span class="num">Tela 11</span><h3>Umidade do ar</h3><p><b>Não monitorar</b>: só mostra o valor, sem alerta. Ou escolha uma faixa pronta, ou <b>Personalizado</b> para digitar mínimo e máximo.</p></div>
+      </article>
+      <article class="passo c" id="c-12">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Salvar a planta"><img src="img/07d_criar_preenchido.webp" width="780" height="1688" alt="Salvar a planta" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Escolher ou criar a planta</span><span class="num">Tela 12</span><h3>Salvar a planta</h3><p>Confira os valores e toque em <b>Salvar</b>. A planta criada já fica escolhida.</p></div>
+      </article>
+      <article class="passo c" id="c-13">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Tela principal"><img src="img/09b_site_planta_inteiro_c.webp" width="780" height="1374" alt="Tela principal" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Usar no dia a dia</span><span class="num">Tela 13</span><h3>Tela principal</h3><p>O rostinho mostra como a planta está. Cada card mostra a leitura atual, se está <b>Ideal</b> e a faixa ideal. "Sol de hoje" mostra quanto de luz a planta já recebeu hoje, comparado com a meta.</p></div>
+      </article>
+      <article class="passo c" id="c-14">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Informações da planta"><img src="img/10_info.webp" width="780" height="1688" alt="Informações da planta" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Usar no dia a dia</span><span class="num">Tela 14</span><h3>Informações da planta</h3><p>Toque no <b>(i)</b> para ver as faixas da planta. Aqui ficam os botões <b>Editar planta</b> e <b>Trocar Wi-Fi</b>.</p></div>
+      </article>
+      <article class="passo c" id="c-15">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Ligar e desligar o monitoramento"><img src="img/12_monitorar_desligado.webp" width="780" height="1688" alt="Ligar e desligar o monitoramento" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Usar no dia a dia</span><span class="num">Tela 15</span><h3>Ligar e desligar o monitoramento</h3><p>A chave à esquerda de cada card liga ou desliga aquele sensor. Desligado: o card fica cinza ("Não monitorado"), não gera alerta e o LED não avisa.</p></div>
+      </article>
+      <article class="passo c" id="c-16">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Calibrar: escolher o sensor"><img src="img/13_cal_escolha.webp" width="780" height="1688" alt="Calibrar: escolher o sensor" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Calibrar os sensores</span><span class="num">Tela 16</span><h3>Calibrar: escolher o sensor</h3><p>Os sensores já vêm ajustados de fábrica; calibrar deixa as leituras mais precisas. Toque em <b>Calibrar</b> no topo e escolha o sensor. "Voltar ao padrão" só fica ativo depois de uma calibração.</p></div>
+      </article>
+      <article class="passo c" id="c-17">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Calibrar solo: no ar"><img src="img/14_cal_solo_ar.webp" width="780" height="1688" alt="Calibrar solo: no ar" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Calibrar os sensores</span><span class="num">Tela 17</span><h3>Calibrar solo: no ar</h3><p>Passo 1: tire o sensor da terra, limpe e seque. Deixe no ar e toque em <b>Medir</b>. Essa medida passa a valer 0 %.</p></div>
+      </article>
+      <article class="passo c" id="c-18">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Calibrar solo: na água"><img src="img/15_cal_solo_agua.webp" width="780" height="1688" alt="Calibrar solo: na água" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Calibrar os sensores</span><span class="num">Tela 18</span><h3>Calibrar solo: na água</h3><p>Passo 2: coloque o sensor num copo com água até a linha branca e toque em <b>Medir</b>. Essa medida passa a valer 100 %. Não molhe a parte de cima.</p></div>
+      </article>
+      <article class="passo c" id="c-19">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Calibrar solo: salvar"><img src="img/16_cal_solo_salvar.webp" width="780" height="1688" alt="Calibrar solo: salvar" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Calibrar os sensores</span><span class="num">Tela 19</span><h3>Calibrar solo: salvar</h3><p>Confira as duas medidas e toque em <b>Salvar</b>. Para medir de novo, toque em <b>Refazer</b>.</p></div>
+      </article>
+      <article class="passo c" id="c-20">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Calibração salva"><img src="img/17_cal_fim.webp" width="780" height="1688" alt="Calibração salva" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Calibrar os sensores</span><span class="num">Tela 20</span><h3>Calibração salva</h3><p>Pronto. A calibração vale para todas as plantas.</p></div>
+      </article>
+      <article class="passo c" id="c-21">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Calibrar temperatura"><img src="img/18_cal_temp.webp" width="780" height="1688" alt="Calibrar temperatura" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Calibrar os sensores</span><span class="num">Tela 21</span><h3>Calibrar temperatura</h3><p>Deixe um termômetro ao lado da planta por uns 5 minutos. Digite o valor dele e toque em <b>Salvar</b>. A umidade do ar é corrigida junto.</p></div>
+      </article>
+      <article class="passo c" id="c-22">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Trocar o Wi-Fi"><img src="img/11_trocar_wifi.webp" width="780" height="1688" alt="Trocar o Wi-Fi" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Outras opções</span><span class="num">Tela 22</span><h3>Trocar o Wi-Fi</h3><p>Em Informações → <b>Trocar Wi-Fi</b> → <b>Continuar</b>. O projeto Minha Planta sai da rede da casa e cria de novo a rede <b>MINHA_PLANTA</b>. Depois, repita as telas 2 a 6.</p></div>
+      </article>
+      <article class="passo c" id="c-23">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Tema claro ou escuro"><img src="img/19_tema_escuro.webp" width="780" height="1688" alt="Tema claro ou escuro" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Outras opções</span><span class="num">Tela 23</span><h3>Tema claro ou escuro</h3><p>O ícone de sol/lua no topo troca entre tema claro e escuro. A escolha fica salva no seu celular ou computador.</p></div>
+      </article>
+      <article class="passo c led" id="c-24">
+        <div class="texto"><span class="grp">LED azul</span><span class="num">Tela 24</span><h3>O que o LED quer dizer</h3>
+<div class="tabela"><table><tr><th>LED azul</th><th>Significado</th></tr>
+<tr><td>Aceso fixo</td><td>Rede MINHA_PLANTA aberta: esperando configurar o Wi-Fi, ou não conseguiu entrar na rede salva (tenta de novo a cada 2 minutos)</td></tr>
+<tr><td>Pisca 1 vez por segundo</td><td>Tudo certo</td></tr>
+<tr><td>2 piscadas a cada 3 s</td><td>Sensor de solo desconectado ou com defeito</td></tr>
+<tr><td>3 piscadas a cada 3 s</td><td>Sensor de temperatura desconectado ou com defeito</td></tr>
+<tr><td>4 piscadas a cada 3 s</td><td>Sensor de luz desconectado ou com defeito</td></tr>
+<tr><td>Pisca rápido</td><td>Conectando no Wi-Fi da casa: ao ligar, ou quando a conexão cai e ele tenta voltar</td></tr></table></div>
+<p>Só contam os sensores com a chave de monitorar ligada. Com mais de um problema, os padrões se alternam.</p>
+        </div>
+      </article>
+    </div>
+    <div class="controles">
+      <button type="button" class="ant" aria-label="Anterior">‹</button>
+      <div class="meio"><span class="cont"><b>1</b> / 24</span><div class="barra"><i></i></div></div>
+      <button type="button" class="prox" aria-label="Próximo">›</button>
+    </div>
+  </section>
+  <section id="codigo" role="tabpanel" aria-labelledby="aba-codigo" class="codigo" hidden>
+    <div class="cards">
+      <article class="card">
+        <h3><span class="ico" aria-hidden="true">💾</span>Baixar o código</h3>
+        <p>Baixe o código para ver, estudar e modificar na Arduino IDE.</p>
+        <a class="botao" href="firmware/minha_planta_v1.ino" download>Baixar código (.ino)</a>
+        <p class="detalhe">Placa: ESP32C3 Dev Module · USB CDC On Boot: Enabled</p>
+      </article>
+      <article class="card">
+        <h3><span class="ico" aria-hidden="true">🔌</span>Instalar ou restaurar pelo navegador</h3>
+        <p>Grava o código original no ESP32 direto pelo navegador, sem Arduino IDE. Use para restaurar o kit depois de testar outro código.</p>
+        <esp-web-install-button manifest="firmware/manifest.json">
+          <button slot="activate" type="button" class="botao">Instalar código original</button>
+          <p slot="unsupported" class="sem-suporte">Seu navegador não é compatível. Use o Chrome ou o Edge no computador.</p>
+          <p slot="not-allowed" class="sem-suporte">Abra o site por https para instalar.</p>
+        </esp-web-install-button>
+        <ol class="passos-cod">
+          <li>Ligue o ESP32 no computador com um cabo USB-C de dados.</li>
+          <li>Clique em "Instalar código original" e escolha a porta do ESP32.</li>
+          <li>Se o ESP32 não aparecer, desligue o cabo, segure o botão BOOT, ligue o cabo de novo e solte o botão.</li>
+          <li>Depois de instalar, o LED azul fica aceso fixo: configure o Wi-Fi de novo pela rede MINHA_PLANTA.</li>
+        </ol>
+        <p class="alerta"><span aria-hidden="true">⚠️</span> A instalação apaga o Wi-Fi salvo, as plantas criadas e a calibração.</p>
+        <div class="plano-b">
+          <h4><span aria-hidden="true">🛠️</span> Não funcionou pelo navegador? Use a Arduino IDE</h4>
+          <p>Calma, isso é comum. O botão acima <b>não funciona</b> quando:</p>
+          <ul class="motivos">
+            <li><span aria-hidden="true">📱</span><p>Você está no <b>celular ou tablet</b>. Use um computador.</p></li>
+            <li><span aria-hidden="true">🌐</span><p>O navegador <b>não é o Chrome nem o Edge</b>. Abra o site em um deles.</p></li>
+            <li><span aria-hidden="true">🔌</span><p>O <b>cabo USB-C só carrega</b> e não passa dados. Teste outro cabo.</p></li>
+            <li><span aria-hidden="true">🔒</span><p>O computador é de <b>empresa ou escola</b> e bloqueia o USB. Use outro computador.</p></li>
+          </ul>
+          <p>Se mesmo assim não der certo, grave o código pela <b>Arduino IDE</b>, o programa gratuito usado para programar o ESP32:</p>
+          <ol class="passos-cod">
+            <li><b>Instale a Arduino IDE</b> pelo site <a href="https://www.arduino.cc/en/software" target="_blank" rel="noopener">arduino.cc/en/software</a>.</li>
+            <li><b>Adicione o ESP32 (só na primeira vez):</b> na Arduino IDE, clique em <b>Ferramentas → Placa → Gerenciador de Placas</b>, pesquise <b>esp32</b> e instale o da <b>Espressif Systems</b>.</li>
+            <li><b>Abra o código:</b> baixe no botão <b>Baixar código (.ino)</b>, lá em cima, e abra o arquivo na Arduino IDE. Se ela pedir para criar uma pasta, clique em <b>OK</b>.</li>
+            <li><b>Escolha a placa:</b> em <b>Ferramentas → Placa → esp32</b>, escolha <b>ESP32C3 Dev Module</b>. Depois, em <b>Ferramentas → USB CDC On Boot</b>, escolha <b>Enabled</b>.</li>
+            <li><b>Escolha a porta:</b> ligue o ESP32 no computador e, em <b>Ferramentas → Porta</b>, escolha a que apareceu (no Windows é algo como <b>COM3</b>).</li>
+            <li><b>Grave:</b> clique no botão redondo com a <b>seta para a direita (→)</b>, no topo. Espere aparecer a mensagem de carregamento concluído na parte de baixo.</li>
+          </ol>
+          <p class="dica"><span aria-hidden="true">💡</span> Nenhuma porta apareceu? Desligue o cabo, segure o botão <b>BOOT</b> do ESP32, ligue o cabo de novo e solte o botão. Depois, olhe de novo em <b>Ferramentas → Porta</b>.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="rodape">Minha Planta · v1</footer>
+<dialog id="zoom" aria-label="Imagem ampliada"><img alt=""><button type="button" class="fechar" aria-label="Fechar">×</button></dialog>
+<script src="app.js" defer></script>
+</body>
+</html>

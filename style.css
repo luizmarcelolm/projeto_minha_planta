@@ -1,0 +1,155 @@
+/* Minha Planta - Guia do kit (v1: passos em slides). Cores iguais as do site da planta. */
+:root{
+  --bg:#eef2ea; --panel:#f8faf6; --ink:#1f2a1f; --soft:#5d6b5d; --line:#d7dfd2;
+  --leaf:#4a7d3a; --leaf-ink:#fff; --leaf-soft:#e3efdb; --shadow:0 1px 2px rgba(0,0,0,.05),0 8px 24px rgba(30,50,30,.08);
+  --topo:132px; --ctrl:76px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#121a14;--panel:#1a241c;--ink:#e6eee3;--soft:#9fb09c;--line:#2c3a2e;--leaf:#7cba62;--leaf-ink:#0f1a10;--leaf-soft:#22331f;--shadow:0 1px 2px rgba(0,0,0,.3)}
+}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,sans-serif;background:var(--bg);color:var(--ink);min-height:100dvh;display:flex;flex-direction:column}
+img{max-width:100%;height:auto;display:block}
+.topo{width:100%;max-width:1100px;margin:0 auto;padding:16px 16px 4px}
+.marca{display:flex;align-items:center;gap:12px}
+.marca svg{width:38px;height:38px;color:var(--leaf);flex:none}
+.marca strong{display:block;font-size:1.3rem;line-height:1.1}
+.marca span{color:var(--soft);font-size:.92rem}
+/* abas */
+.abas{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;width:100%;max-width:1100px;margin:0 auto;padding:10px 16px}
+.abas button{min-width:0;white-space:nowrap;font:inherit;font-weight:700;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;transition:background .15s,color .15s}
+.abas button[aria-selected=true]{background:var(--leaf);border-color:var(--leaf);color:var(--leaf-ink)}
+button:focus-visible,.slides:focus-visible,.proximo:focus-visible,.botao:focus-visible{outline:3px solid var(--leaf);outline-offset:2px}
+main{flex:1;width:100%;max-width:1100px;margin:0 auto;padding:0 16px}
+.intro{color:var(--soft);margin:2px 0 10px;font-size:.95rem}
+/* slides: rolagem lateral com encaixe (deslizar no celular) */
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:16px;scrollbar-width:none;overscroll-behavior-x:contain;border-radius:18px}
+.slides::-webkit-scrollbar{display:none}
+.passo{flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;height:calc(100dvh - var(--topo) - var(--ctrl) - 44px);min-height:420px}
+.passo figure{flex:1;min-height:0;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:12px;border-bottom:1px solid var(--line)}
+.zoom{border:0;padding:0;background:none;cursor:zoom-in;display:flex;max-height:100%;max-width:100%}
+.zoom img{max-height:100%;width:auto;object-fit:contain;border-radius:10px}
+.passo.c .zoom img{border:1px solid var(--line)}
+.texto{padding:12px 16px 16px;flex:none;max-height:45%;overflow-y:auto}
+.grp{display:block;font-size:.8rem;color:var(--soft);margin-bottom:4px}
+.num{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--leaf);background:var(--leaf-soft);padding:2px 8px;border-radius:99px}
+.texto h3{font-size:1.1rem;margin:6px 0 4px}
+.texto p{font-size:.97rem}
+.led .texto{max-height:none;flex:1;padding:20px}
+.tabela{overflow-x:auto;margin-top:8px}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--soft);font-weight:600}
+td:first-child{font-weight:700;white-space:nowrap}
+.led .texto p{color:var(--soft);font-size:.9rem;margin-top:8px}
+.proximo{display:inline-block;margin-top:12px;padding:10px 18px;border-radius:12px;background:var(--leaf);color:var(--leaf-ink);font-weight:700;text-decoration:none}
+/* aba sobre (em "em" para encolher junto com a altura da tela no desktop) */
+.sobre{display:grid;gap:.75em;padding:2px 0 14px}
+.sobre[hidden]{display:none}
+.hero{background:linear-gradient(135deg,#4f8a3c,#2a5220);color:#fff;border-radius:18px;padding:1.25em;box-shadow:var(--shadow);display:grid;gap:.9em}
+.hero h2{font-size:1.5em;line-height:1.15;letter-spacing:-.01em}
+.hero h2 span{display:block;font-size:.62em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-bottom:.3em}
+.hero h2 i{font-style:normal}
+.pergunta{margin-top:.5em;font-size:1.02em;opacity:.92}
+.hero .proximo{background:#fff;color:#2a5220;margin-top:.8em;font-size:.95em;padding:.6em 1.1em}
+.hero-texto p{font-size:.95em;line-height:1.5}
+.hero-texto p+p{margin-top:.6em}
+.hero-texto b{color:#fff}
+.cards{display:grid;gap:.75em}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:1em 1.1em;box-shadow:var(--shadow)}
+.card h3{display:flex;align-items:center;gap:.55em;font-size:1em;line-height:1.25;margin-bottom:.6em}
+.ico{flex:none;width:2.1em;height:2.1em;border-radius:10px;background:var(--leaf-soft);display:grid;place-items:center;font-size:1.05em}
+.card p{font-size:.88em;line-height:1.45;color:var(--soft)}
+.card p+p{margin-top:.5em}
+.card b{color:var(--ink)}
+.lista{list-style:none;padding:0;display:grid;gap:.55em}
+.lista li{display:flex;gap:.6em;align-items:flex-start}
+.lista li>span{flex:none;font-size:1em;line-height:1.3}
+.lema{border-left:4px solid var(--leaf);background:var(--leaf-soft);border-radius:8px;padding:.5em .8em;font-weight:700;color:var(--ink)!important}
+.antes{background:var(--panel);border:1.5px dashed var(--leaf);border-radius:18px;padding:.8em 1.1em;display:grid;gap:.5em}
+.antes h3{font-size:.98em;white-space:nowrap}
+.antes ul{list-style:none;padding:0;display:grid;gap:.4em;font-size:.86em;line-height:1.4;color:var(--soft)}
+.antes b{color:var(--ink)}
+/* aba codigo */
+.codigo{padding:2px 0 14px}
+.codigo .card{padding:1.2em 1.3em}
+.codigo .card h3{font-size:1.1em}
+.codigo .card p{font-size:.95em}
+.botao{display:inline-block;margin:.9em 0 .3em;padding:10px 18px;border:0;border-radius:12px;background:var(--leaf);color:var(--leaf-ink);font:inherit;font-weight:700;text-decoration:none;cursor:pointer}
+.botao:hover{filter:brightness(1.08)}
+.codigo .detalhe{font-size:.8em;margin-top:.4em}
+.sem-suporte{margin:.9em 0 .3em;padding:.6em .8em;border-radius:10px;background:var(--leaf-soft);color:var(--ink)!important;font-weight:600}
+esp-web-install-button:not(:defined) [slot=unsupported],esp-web-install-button:not(:defined) [slot=not-allowed]{display:none}
+.passos-cod{margin-top:.8em;padding-left:1.3em;display:grid;gap:.4em;font-size:.92em;color:var(--soft)}
+.alerta{margin-top:1em;padding:.7em .9em;border-radius:10px;border:1px solid #e0a43a;background:#fdf3e1;color:#7a4b00!important;font-weight:700}
+.plano-b{margin-top:1em;padding-top:1em;border-top:1px solid var(--line)}
+.plano-b h4{font-size:1em;margin-bottom:.4em}
+.plano-b p+p{margin-top:.5em}
+.plano-b .passos-cod{margin-top:.4em}
+.plano-b .passos-cod li::marker{font-weight:700;color:var(--leaf)}
+.plano-b a{color:var(--leaf);font-weight:700}
+.motivos{list-style:none;padding:0;margin:.5em 0 .8em;display:grid;gap:.4em}
+.motivos li{display:flex;gap:.6em;align-items:flex-start;background:var(--bg);border-radius:10px;padding:.45em .7em}
+.motivos li p{margin:0!important}
+.dica{margin-top:.8em!important;padding:.6em .8em;border-radius:10px;background:var(--leaf-soft);color:var(--ink)!important}
+@media (min-width:860px){.motivos{grid-template-columns:1fr 1fr}}
+@media (prefers-color-scheme:dark){.alerta{background:#3a2c12;border-color:#8a6420;color:#f3cf8b!important}}
+/* controles */
+.controles{display:flex;align-items:center;gap:12px;height:var(--ctrl);padding:12px 0}
+.controles button{flex:none;width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:30px;line-height:1;cursor:pointer;box-shadow:var(--shadow)}
+.controles .prox{background:var(--leaf);border-color:var(--leaf);color:var(--leaf-ink)}
+.controles button:disabled{opacity:.35;cursor:default}
+.meio{flex:1;text-align:center}
+.cont{font-size:.9rem;color:var(--soft)}
+.cont b{color:var(--ink)}
+.barra{height:6px;background:var(--line);border-radius:99px;margin-top:6px;overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:var(--leaf);border-radius:99px;transition:width .25s}
+.rodape{text-align:center;color:var(--soft);font-size:.8rem;padding:0 16px 10px}
+/* tela cheia */
+#zoom{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
+#zoom::backdrop{background:rgba(0,0,0,.88)}
+#zoom[open]{display:flex;align-items:center;justify-content:center}
+#zoom img{max-width:94vw;max-height:92vh;width:auto;border-radius:10px;cursor:zoom-out}
+#zoom .fechar{position:fixed;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:28px;line-height:1;cursor:pointer}
+/* desktop: imagem a esquerda, texto a direita */
+@media (min-width:860px){
+  :root{--topo:140px}
+  .passo{flex-direction:row;min-height:460px}
+  .passo figure{border-bottom:0;border-right:1px solid var(--line);padding:20px}
+  .passo.c figure{flex:0 0 44%}
+  .passo.m figure{flex:0 0 66%}
+  .texto{max-height:none;align-self:center;padding:28px 32px;flex:1}
+  .texto h3{font-size:1.45rem}
+  .texto p{font-size:1.05rem}
+  .led .texto{align-self:stretch}
+  .sobre{font-size:clamp(11px,1.72vh,16px)}
+  .hero{grid-template-columns:1fr 1.3fr;align-items:center;gap:2em;padding:1.4em 1.8em}
+  .hero h2{font-size:1.75em}
+  .cards{grid-template-columns:1.1fr 1fr 1fr}
+  .antes{grid-template-columns:auto 1fr;align-items:center;gap:1.5em}
+  .antes ul{grid-template-columns:1fr 1.5fr 1fr;gap:1.2em}
+  .codigo .cards{grid-template-columns:1fr}
+}
+/* notebooks com pouca altura: aperta o topo para a aba Sobre caber sem rolagem */
+@media (min-width:860px) and (max-height:760px){
+  .topo{padding-top:8px}
+  .marca svg{width:30px;height:30px}
+  .abas{padding:6px 16px}
+  .abas button{padding:7px 14px}
+  .sobre{padding-bottom:8px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.slides{scroll-behavior:auto}}
+/* celular: fonte das abas encolhe com a tela para "Configuração" caber em 1/4 da largura */
+@media (max-width:560px){
+  .abas{gap:4px}
+  .abas button{font-size:clamp(10px,3vw,15px);padding:10px 2px;border-radius:10px;letter-spacing:-.01em}
+}
+/* tabela do LED no celular: cada linha vira um bloco */
+@media (max-width:600px){
+  .tabela table,.tabela tbody,.tabela tr,.tabela td{display:block;width:100%}
+  .tabela tr:first-child{display:none}
+  .tabela tr{padding:8px 0;border-bottom:1px solid var(--line)}
+  .tabela td{border:0;padding:2px 0;white-space:normal}
+  .tabela td:first-child{color:var(--leaf)}
+}

@@ -14,6 +14,15 @@
 <body>
 <header class="topo">
   <div class="marca"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V15" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M16 16C16 9 11 5 4 5c0 7 5 11 12 11Z" fill="currentColor"/><path d="M16 13c0-5 4-9 12-9 0 6-4 10-12 9Z" fill="currentColor" opacity=".7"/></svg><div><strong>Minha Planta</strong><span>Guia do kit</span></div></div>
+  <div class="busca" role="search">
+    <button type="button" class="busca-abrir" aria-label="Buscar no guia"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+    <div class="busca-caixa">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <input id="busca" type="search" placeholder="Buscar no guia (ex.: senha, LED)" autocomplete="off" spellcheck="false" aria-label="Buscar no guia" role="combobox" aria-expanded="false" aria-controls="busca-res" aria-autocomplete="list">
+      <button type="button" class="busca-fechar" aria-label="Limpar ou fechar a busca">×</button>
+    </div>
+    <ul id="busca-res" class="busca-res" role="listbox" aria-label="Resultados da busca" hidden></ul>
+  </div>
 </header>
 <nav class="abas" role="tablist" aria-label="Partes do guia">
   <button role="tab" id="aba-sobre" aria-controls="sobre" aria-selected="true" data-aba="sobre">Sobre</button>
@@ -183,16 +192,20 @@
       </article>
       <article class="passo c" id="c-22">
         <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Trocar o Wi-Fi"><img src="img/11_trocar_wifi.webp" width="780" height="1688" alt="Trocar o Wi-Fi" loading="lazy" decoding="async"></button></figure>
-        <div class="texto"><span class="grp">Outras opções</span><span class="num">Tela 22</span><h3>Trocar o Wi-Fi</h3><p>Em Informações → <b>Trocar Wi-Fi</b> → <b>Continuar</b>. O projeto Minha Planta sai da rede da casa e cria de novo a rede <b>MINHA_PLANTA</b>. Depois, repita as telas 2 a 6.</p></div>
+        <div class="texto"><span class="grp">Outras opções</span><span class="num">Tela 22</span><h3>Trocar o Wi-Fi</h3><p>Em Informações → <b>Trocar Wi-Fi</b> → <b>Continuar</b>. O projeto Minha Planta sai da rede da casa e cria de novo a rede <b>MINHA_PLANTA</b>. Depois, repita as telas 2 a 6. Não consegue abrir o site? Veja a próxima tela.</p></div>
       </article>
       <article class="passo c" id="c-23">
-        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Tema claro ou escuro"><img src="img/19_tema_escuro.webp" width="780" height="1688" alt="Tema claro ou escuro" loading="lazy" decoding="async"></button></figure>
-        <div class="texto"><span class="grp">Outras opções</span><span class="num">Tela 23</span><h3>Tema claro ou escuro</h3><p>O ícone de sol/lua no topo troca entre tema claro e escuro. A escolha fica salva no seu celular ou computador.</p></div>
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Trocar o Wi-Fi pelo botão BOOT"><img src="img/20_botao_boot.svg" width="780" height="600" alt="ESP32-C3 com seta apontando o botão BOOT, à direita do botão RST" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Outras opções</span><span class="num">Tela 23</span><h3>Trocar o Wi-Fi pelo botão BOOT</h3><p>Use quando não conseguir abrir o site, por exemplo depois de trocar o roteador ou a senha do Wi-Fi. Com a planta <b>ligada</b>, segure o botão <b>BOOT</b> do ESP32 por <b>5 segundos</b> e solte. O LED azul fica <b>aceso fixo</b> e a rede <b>MINHA_PLANTA</b> aparece de novo no celular. Depois, repita as telas 2 a 6.</p></div>
       </article>
-      <article class="passo c led" id="c-24">
-        <div class="texto"><span class="grp">LED azul</span><span class="num">Tela 24</span><h3>O que o LED quer dizer</h3>
+      <article class="passo c" id="c-24">
+        <figure><button class="zoom" type="button" aria-label="Ampliar imagem: Tema claro ou escuro"><img src="img/19_tema_escuro.webp" width="780" height="1688" alt="Tema claro ou escuro" loading="lazy" decoding="async"></button></figure>
+        <div class="texto"><span class="grp">Outras opções</span><span class="num">Tela 24</span><h3>Tema claro ou escuro</h3><p>O ícone de sol/lua no topo troca entre tema claro e escuro. A escolha fica salva no seu celular ou computador.</p></div>
+      </article>
+      <article class="passo c led" id="c-25">
+        <div class="texto"><span class="grp">LED azul</span><span class="num">Tela 25</span><h3>O que o LED quer dizer</h3>
 <div class="tabela"><table><tr><th>LED azul</th><th>Significado</th></tr>
-<tr><td>Aceso fixo</td><td>Rede MINHA_PLANTA aberta: esperando configurar o Wi-Fi, ou não conseguiu entrar na rede salva (tenta de novo a cada 2 minutos)</td></tr>
+<tr><td>Aceso fixo</td><td>Rede MINHA_PLANTA aberta: esperando configurar o Wi-Fi, o botão BOOT foi segurado por 5 s, ou não conseguiu entrar na rede salva (tenta de novo a cada 2 minutos)</td></tr>
 <tr><td>Pisca 1 vez por segundo</td><td>Tudo certo</td></tr>
 <tr><td>2 piscadas a cada 3 s</td><td>Sensor de solo desconectado ou com defeito</td></tr>
 <tr><td>3 piscadas a cada 3 s</td><td>Sensor de temperatura desconectado ou com defeito</td></tr>
@@ -204,7 +217,7 @@
     </div>
     <div class="controles">
       <button type="button" class="ant" aria-label="Anterior">‹</button>
-      <div class="meio"><span class="cont"><b>1</b> / 24</span><div class="barra"><i></i></div></div>
+      <div class="meio"><span class="cont"><b>1</b> / 25</span><div class="barra"><i></i></div></div>
       <button type="button" class="prox" aria-label="Próximo">›</button>
     </div>
   </section>

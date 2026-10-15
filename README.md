@@ -13,6 +13,37 @@ Página com quatro abas: **Sobre**, **Montagem**, **Configuração** e **Código
 | `favicon.svg` | Ícone da aba do navegador |
 | `vercel.json` | Cache das imagens na Vercel |
 
+## Abas e slides
+
+### Sobre
+- Projeto Minha Planta: o que mede, o que você pratica e avisos antes de comprar.
+
+### Montagem (4 slides)
+1. `n01_conectores.webp` — Encaixe os conectores
+2. `n02_solda_por_baixo.webp` — Solde por baixo
+3. `n03_modulos_e_cabo.webp` — Encaixe os módulos
+4. `n04_tampa.webp` — Feche a tampa
+
+### Configuração (14 slides)
+1. `00a_usb_ligado.webp` — Ligue o kit
+2. `00b_rede_minha_planta.webp` — Conecte na MINHA_PLANTA
+3. `01_wifi_lista_c.webp` — Escolha o seu Wi-Fi
+4. `03_wifi_senhas.webp` — Digite as senhas
+5. `04_wifi_ok_c.webp` — Pronto!
+6. `06_planta_menu.webp` — Escolha a planta
+7. `07d_criar_preenchido.webp` — Crie a sua planta
+8. `09b_site_planta_inteiro_c.webp` — Acompanhe a planta
+9. `08_senha_site.webp` — Senha do site
+10. `14_cal_solo_ar.webp` — Calibrar o solo (opcional)
+11. `18_cal_temp.webp` — Calibrar a temperatura (opcional)
+12. `11_trocar_wifi.webp` — Trocar o Wi-Fi
+13. `20_botao_boot.svg` — Sem acesso ao site?
+14. Sem imagem — O que o LED quer dizer
+
+### Código
+- Baixar o código (`.ino`)
+- Restaurar o código original (ESP Web Tools + `manifest.json`)
+
 ## Ver no computador
 Abra a pasta no VS Code e clique duas vezes no `index.html`. Ou use a extensão **Live Server** (botão "Go Live").
 

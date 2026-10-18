@@ -2202,6 +2202,7 @@ void abrirModoConfig() {
   WiFi.mode(WIFI_AP_STA);
   WiFi.softAPConfig(IPAddress(192,168,4,1), IPAddress(192,168,4,1), IPAddress(255,255,255,0));
   WiFi.softAP(AP_NOME);                         // sem senha
+  WiFi.setTxPower(WIFI_POWER_8_5dBm);           // potencia baixa: alguns SuperMini nao abrem a rede na potencia maxima
   dns.start(53, "*", IPAddress(192,168,4,1));   // todo endereco cai na pagina de configuracao
   Serial.printf("Rede de configuracao aberta: %s (sem senha)  Pagina: http://192.168.4.1\n", AP_NOME);
 }
